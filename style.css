@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 h1 {
   background: rgb(43, 255, 0);
 }
@@ -20,8 +24,9 @@ h1 {
 
 .company-row {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  border-bottom: 1px solid #000;
+
   margin-bottom: 15px;
 }
 .company-row h3 {
@@ -30,4 +35,61 @@ h1 {
 .number-of-company {
   margin-right: 15px;
   color: blue;
+}
+
+.company-info,
+.company-header {
+  width: 100%;
+  display: flex;
+}
+
+.company-info {
+  box-shadow: 0px 2px 8px 0px #00000063;
+  border-radius: 20px;
+  margin-top: 15px;
+  transition: 0.5s;
+}
+
+.company-text {
+  padding: 15px;
+}
+
+.company-header {
+  border-bottom: 1px solid black;
+  padding: 15px;
+}
+
+@keyframes dropDownAnimation {
+  0% {
+    opacity: 0;
+    height: 0;
+  }
+  100% {
+    opacity: 1;
+    height: 60px;
+  }
+}
+
+@keyframes dropDownAnimation2 {
+  0% {
+    overflow: auto;
+    opacity: 1;
+    height: 60px;
+  }
+  100% {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+  }
+}
+
+.show {
+  overflow: auto;
+  animation: dropDownAnimation 0.5s;
+}
+
+.hide {
+  overflow: hidden;
+  height: 0;
+  animation: dropDownAnimation2 0.5s;
 }
