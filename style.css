@@ -1,0 +1,33 @@
+h1 {
+  background: rgb(43, 255, 0);
+}
+.form-filed {
+  border: 2px solid rgb(0, 60, 255);
+}
+#content {
+  max-width: 1000px;
+  margin: auto;
+  cursor: pointer;
+}
+
+.active {
+  background: red;
+}
+
+.static {
+  background: rgb(0, 89, 255);
+}
+
+.company-row {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #000;
+  margin-bottom: 15px;
+}
+.company-row h3 {
+  margin: 0 15px 0 0;
+}
+.number-of-company {
+  margin-right: 15px;
+  color: blue;
+}
