@@ -18,7 +18,7 @@ function buildUser(data, counter) {
     row.className = "user-row";
 
     row.innerHTML = `
-        <div class="company-header">
+        <div class="user-header">
             <div class="number-of-user">${counter}</div>
             <h3>Name: ${name}</h3>
             <div>Age: ${age}</div>
