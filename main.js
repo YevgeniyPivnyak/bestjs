@@ -1,27 +1,45 @@
-const xhr = new XMLHttpRequest();
+fetch('http://learn.api.axenov-it.com/users')
+    .then(format).then(renderUsers)
 
-xhr.open('GET', 'http://learn.api.axenov-it.com/companies', false);
 
-xhr.send();
+function format(response) {
+       return response.json();
+}
 
-const companies = JSON.parse(xhr.response)
+function createCounter(start = 0, step = 1) {
+    let index = start - step;
+    return () => index += step
+}
 
-const content = document.querySelector("#content")
+function buildUser(data, counter) {
+    const { name, age, city } = data
 
-let html = ""
-let counter = 1
+    const row = document.createElement("div")
+    row.className = "user-row";
 
-for (const company of companies) {
-    html += `<div class="company-row">
-        <div class="number-of-company">${counter++}</div>
-        <h3>${company.name}</h3>
-        <div>${company.address}</div>
-        <div>${company.phones}</div>
-    </div>`
+    row.innerHTML = `
+        <div class="company-header">
+            <div class="number-of-user">${counter}</div>
+            <h3>Name: ${name}</h3>
+            <div>Age: ${age}</div>
+            <div>City: ${city}</div>
+        </div>
+       `
+    return row
+}
+
+
+function renderUsers(users) {
+    const content = document.querySelector("#content")
+    const counter = createCounter(1);
+
+    for (const user of users) {
+        const row = buildUser(user, counter());
+
+        content.appendChild(row)
+    }
 
 }
 
-content.innerHTML = html
 
-console.log(html);
 

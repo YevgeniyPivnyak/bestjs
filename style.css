@@ -18,16 +18,16 @@ h1 {
   background: rgb(0, 89, 255);
 }
 
-.company-row {
+.user-row {
   display: flex;
   align-items: center;
   border-bottom: 1px solid #000;
   margin-bottom: 15px;
 }
-.company-row h3 {
+.user-row h3 {
   margin: 0 15px 0 0;
 }
-.number-of-company {
+.number-of-user {
   margin-right: 15px;
   color: blue;
 }
